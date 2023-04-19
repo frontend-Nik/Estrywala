@@ -1,0 +1,39 @@
+@use "./theme.scss" as th;
+
+// Hero Section Start //
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/service-hero.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 100%;
+}
+
+// Hero Section End //
+
+// Services Section Start //
+.services-section {
+  .services-part {
+    background-color: th.$foam;
+    box-shadow: 20px 14px 67px rgb(0 0 0 / 15%);
+    ul {
+      li {
+        color: th.$dark-blue;
+        line-height: 2.5;
+      }
+    }
+  }
+  .ser-book-btn {
+    width: fit-content;
+  }
+}
+// Services Section End //
+
+// ================================================= Responsive Scss Start ===================================================== //
+
+@media screen and (max-width: 767.98px) {
+  .hero {
+    background-size: 200% 100%;
+  }
+}

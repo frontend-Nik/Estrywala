@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat--SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/pricing/pricing-hero.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 100%;
+}
+
+.book-section {
+  background-color: #e6f4f1;
+}
+.book-section .circle {
+  background-color: #D3EAE8;
+  width: 100px;
+  height: 100px;
+}
+.book-section .circle p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.pricing-section .laundry-pera {
+  width: 80%;
+}
+.pricing-section .grid-container {
+  display: grid;
+  gap: 150px;
+  grid-template-columns: auto auto auto;
+}
+.pricing-section .card {
+  position: relative;
+}
+.pricing-section .card .card-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s;
+}
+.pricing-section .card .card-datail {
+  background-color: #DBE6FF;
+  transition: all 0.3s;
+}
+.pricing-section .card .card-datail p {
+  letter-spacing: 5px;
+  color: #000;
+}
+.pricing-section .card .hover-txt {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  width: 70%;
+  margin: auto;
+  font-size: 18px;
+}
+.pricing-section .card:hover .card-img img,
+.pricing-section .card:hover .card-datail {
+  filter: brightness(0.5);
+}
+.pricing-section .card:hover .hover-txt {
+  opacity: 1;
+}
+
+.refund-section {
+  background-color: #DBE6FF;
+}
+.refund-section .man-img {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.refund-section .man-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 767.98px) {
+  .hero {
+    background-size: 200% 100%;
+  }
+  .pricing-section .laundry-pera {
+    width: 100%;
+  }
+  .pricing-section .grid-container {
+    grid-template-columns: auto;
+    gap: 50px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .pricing-section .grid-container {
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+  .pricing-section .grid-container {
+    gap: 40px;
+  }
+  .pricing-section .card .hover-txt {
+    width: 100%;
+    font-size: 16px;
+  }
+  .refund-section p {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=pricing.css.map */

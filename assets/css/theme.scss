@@ -1,0 +1,71 @@
+// theme colors //
+
+$black:#000;
+$dark-gray:#363636;
+$white:#fff;
+$light-blue: #00a0ff;
+$periwinkle-100 :#b5ccff;
+$periwinkle-80:#b5ccffbf;
+$navy:#c2d5ff;
+$light-green: #e6f4f1;
+$light-green-60:#D3EAE8;
+$foam:#D3EAE8;
+$light-cyan:#DBE6FF;
+$dark-blue: #021e53;
+$text-blue: #021e53b7;
+
+
+// Fonts
+
+$font-Montserrat: "Montserrat", sans-serif;
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat--SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+

@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat--SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/book-hero.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 100%;
+}
+
+.book-section {
+  background-color: #e6f4f1;
+}
+.book-section .circle {
+  background-color: #D3EAE8;
+  width: 100px;
+  height: 100px;
+}
+.book-section .circle p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.form-section {
+  background-color: #DBE6FF;
+  padding: 5rem 0;
+}
+.form-section .form-label {
+  color: #021e53;
+  margin-top: 1rem;
+}
+.form-section .star:after {
+  content: "*";
+  color: red;
+}
+.form-section .form-control {
+  border-color: rgba(2, 30, 83, 0.3960784314);
+}
+
+.service-section .man-img {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.service-section .man-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 767.98px) {
+  .hero {
+    background-size: 200% 100%;
+  }
+}/*# sourceMappingURL=book.css.map */

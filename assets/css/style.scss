@@ -1,0 +1,638 @@
+@use "./theme.scss" as th;
+
+// General css start
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: th.$font-Montserrat;
+  font-weight: 500;
+}
+.wrapper {
+  font-family: th.$font-Montserrat;
+  scroll-behavior: smooth;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+a {
+  text-decoration: none;
+}
+
+.rounded-20 {
+  border-radius: 20px;
+}
+.rounded-10 {
+  border-radius: 10px;
+}
+.rounded-12 {
+  border-radius: 12px;
+}
+.rounded-15 {
+  border-radius: 15px;
+}
+.rounded-50 {
+  border-radius: 50%;
+}
+.imgSize {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-hed {
+  font-weight: bold;
+  color: th.$dark-blue;
+  text-transform: capitalize;
+}
+.section-text {
+  color: th.$text-blue;
+}
+.book-Btn {
+  background-color: th.$light-blue;
+  color: th.$white;
+  border-radius: 10px;
+  border: 0;
+  text-transform: capitalize;
+  box-shadow: none;
+  padding: 0.7rem 2rem;
+  font-size: 18px;
+  display: block;
+  width: fit-content;
+  &:hover {
+    background-color: #0388d4;
+    color: th.$white;
+  }
+}
+
+// General css End //
+
+// Navbar Start //
+
+.main-header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  width: 100vw;
+  padding: 0 10vw;
+  color: black;
+  z-index: 1;
+  transition: 0.4s ease-out;
+  background-color: th.$white;
+  z-index: 2;
+  .active {
+    color: th.$light-blue !important;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: capitalize;
+  }
+
+  .logo {
+    font-weight: bold;
+    color: th.$dark-blue;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+    .nav-link {
+      a {
+        margin: 0.2rem;
+        text-transform: capitalize;
+        color: th.$dark-blue;
+        transition: 0.3s;
+      }
+      a:hover {
+        color: th.$light-blue;
+      }
+      .book-btn {
+        background-color: th.$light-blue;
+        color: th.$white;
+        border-radius: 20px;
+        border: 0;
+        text-transform: capitalize;
+        box-shadow: none;
+        &:hover {
+          background-color: #0678b9;
+          color: th.$white;
+        }
+      }
+    }
+  }
+
+  .menu-icon {
+    position: relative;
+    padding: 26px 10px;
+    cursor: pointer;
+    z-index: 1;
+    display: none;
+
+    &__line {
+      display: block;
+      position: relative;
+      background: th.$black;
+      height: 2px;
+      width: 20px;
+      border-radius: 4px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+        background: th.$black;
+        transition: background 0.8s ease;
+      }
+
+      &::before {
+        transform: translateY(-5px);
+      }
+
+      &::after {
+        transform: translateY(5px);
+      }
+    }
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  &.scrolled {
+    height: 50px;
+    background: th.$white;
+    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.1);
+
+    .menu-icon {
+      &__line,
+      &__line::before,
+      &__line::after {
+        background: th.$black;
+      }
+    }
+  }
+}
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.6);
+  }
+  to {
+    box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes openTop {
+  0% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(90deg);
+  }
+}
+@keyframes closedTop {
+  0% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(90deg);
+  }
+}
+@keyframes openMid {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes closedMid {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes openBtm {
+  0% {
+    transform: translateY(5px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(90deg);
+  }
+}
+@keyframes closedBtm {
+  0% {
+    transform: translateY(5px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(90deg);
+  }
+}
+
+// Navbar End //
+
+// Hero Section Start //
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/homeImg.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: th.$white;
+  margin-top: 65px;
+  text-align: center;
+
+  h1 {
+    font-weight: bold;
+  }
+}
+
+// Hero Section End //
+
+// Services Section Start //
+
+.services-section {
+  background-color: th.$light-green;
+  .ser-card {
+    .rounded-img {
+      background: th.$periwinkle;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      img {
+        max-width: 60%;
+      }
+    }
+    p {
+      text-transform: capitalize;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// Services Section End //
+
+// Card Section Start //
+
+.card-section {
+  .card {
+    width: 80%;
+    margin: auto;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    .card-img-top {
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.13);
+    }
+    .card-body {
+      color: th.$dark-blue;
+    }
+    .card-title {
+      font-size: 22px;
+      padding: 0.5rem 0;
+    }
+    .card-text {
+      font-size: 14px;
+    }
+    &:hover {
+      box-shadow: 0px 0px 17px 0px rgb(0 0 0 / 10%);
+    }
+  }
+}
+
+// Card Section End //
+
+// Review Section Start //
+
+.review-section {
+  background-color: th.$light-green;
+  .review-slider {
+    position: relative;
+    .owl-nav {
+      .owl-prev {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 60px;
+        color: rgba(0, 0, 0, 0.425);
+        transition: 0.3s;
+        &:hover {
+          color: th.$black;
+        }
+      }
+      .owl-next {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        font-size: 60px;
+        color: rgba(0, 0, 0, 0.425);
+        transition: 0.3s;
+        &:hover {
+          color: th.$black;
+        }
+      }
+    }
+
+    .owl-dots {
+      text-align: center;
+      padding-top: 15px;
+      button.owl-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        background: #1a5fdf6c;
+        margin: 0 3px;
+      }
+      button.owl-dot.active {
+        background-color: #1a5fdf;
+      }
+      button.owl-dot:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .review-box {
+    width: 70%;
+    margin: auto;
+  }
+  .profile {
+    width: 80px;
+    height: 80px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  p {
+    width: 95%;
+    margin: auto;
+  }
+  span {
+    text-align: end;
+    text-transform: capitalize;
+    display: block;
+    margin-top: 0.5rem;
+  }
+}
+
+// Review Section End //
+
+// Steps Section Start //
+
+.steps-section {
+  .steps-box {
+    border: 1px solid th.$navy;
+    border-radius: 20px;
+    padding: 1rem;
+    .step-img {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Steps Section End //
+
+// Counter Section End //
+
+.counter-section {
+  background-color: th.$periwinkle-80;
+  .circle {
+    background-color: th.$periwinkle-100;
+    width: 150px;
+    height: 150px;
+    p {
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Counter Section End //
+
+// Footer Start //
+
+footer {
+  background-color: th.$dark-gray;
+  p {
+    margin-bottom: 0;
+  }
+  svg {
+    font-size: 24px;
+    margin-right: 1rem;
+  }
+}
+
+// Footer End //
+
+// ================================================= Responsive Scss Start ===================================================== //
+
+@media screen and (max-width: 767.98px) {
+  .hero {
+    background-size: 200% 100%;
+  }
+
+  .review-section {
+    .profile {
+      margin: auto;
+    }
+    p {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .review-box {
+      width: 100%;
+    }
+    .owl-nav {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .main-header {
+    .menu-icon {
+      display: block;
+
+      &__line {
+        animation: closedMid 0.8s backwards;
+        animation-direction: reverse;
+
+        &::before {
+          animation: closedTop 0.8s backwards;
+          animation-direction: reverse;
+        }
+        &::after {
+          animation: closedBtm 0.8s backwards;
+          animation-direction: reverse;
+        }
+      }
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10rem 0;
+      width: 100vw;
+      height: 100vh;
+      font-size: 2rem;
+      color: th.$white;
+      background: th.$white;
+      transition: opacity 0.8s 0.5s, clip-path 1s 0.5s;
+      clip-path: circle(200px at top right);
+
+      .nav-link {
+        opacity: 0;
+        transform: translateX(100%);
+        width: 100%;
+        text-align: center;
+
+        a {
+          display: block;
+          padding: 2rem 0;
+        }
+        .book-btn {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .menu-btn:checked ~ .nav-links {
+      opacity: 1;
+      clip-path: circle(100% at center);
+
+      .nav-link {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 0.4s ease-in-out,
+          transform 0.6s cubic-bezier(0.175, 0.085, 0.32, 1.275);
+
+        &:nth-of-type(1) {
+          transition-delay: 0.7s;
+        }
+
+        &:nth-of-type(2) {
+          transition-delay: 0.8s;
+        }
+
+        &:nth-of-type(3) {
+          transition-delay: 0.9s;
+        }
+
+        &:nth-of-type(4) {
+          transition-delay: 1s;
+        }
+      }
+    }
+
+    .menu-btn:checked ~ .menu-icon {
+      border-radius: 50%;
+      animation: pulse 1s;
+
+      .menu-icon__line {
+        background: th.$black;
+        animation: openMid 0.8s forwards;
+
+        &::before {
+          background: th.$black;
+          animation: openTop 0.8s forwards;
+        }
+        &::after {
+          background: th.$black;
+          animation: openBtm 0.8s forwards;
+        }
+      }
+    }
+  }
+  .services-section {
+    h1,
+    p {
+      text-align: center;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .card-section {
+    .card {
+      width: 70%;
+      .card-title {
+        font-size: 18px;
+      }
+    }
+  }
+  .review-section {
+    .review-box {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .card-section {
+    .card {
+      width: 100%;
+    }
+  }
+  .review-section {
+    .review-box {
+      width: 80%;
+    }
+  }
+}
